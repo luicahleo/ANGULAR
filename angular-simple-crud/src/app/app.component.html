@@ -4,14 +4,26 @@
 </nav>
 
 <div class="container">
-  <div class="row">
+  <div class="row mt-4" >
     <div class="col-md-8">
       <ul class="list-group">
 
+        <li *ngFor="let empleyee of employeeArray"
+        class="list-group-item list-group-item-action ">
+        <span class="badge bg-secondary">{{ empleyee.id }}</span>
+          {{ empleyee.name }} - {{ empleyee.country }}
+        </li>
       </ul>
       <div class="card mt-4">
         <div class="card-body">
           <div class="card-title">Agregar nuevo empleado</div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" [(ngModel)]="">
+          </div>
+          <div class="form-group">
+            <!-- <input type="text" class="form-control" placeholder="Pais" [(ngModel)]="selectedEmployee.country"> -->
+          </div>
         </div>
       </div>
     </div>
